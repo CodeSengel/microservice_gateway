@@ -14,7 +14,8 @@ router.get("/platformlistpublic", async (req, res) => {
   
     
         url = `${process.env.PUBLICDATA_URL}/platformlistpublic`;
-      
+        console.log('voici url : ',url)
+        console.log('voici axios : ',axios)
   
       
      const response = await axios.get(url, {});
