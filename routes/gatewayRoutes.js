@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 
+router.get('/test',(req,res) => {
+    res.json({
+        'path':'HOME',
+        'url' : `${process.env.PUBLICDATA_URL}/platformlistpublic`
+    })
+})
 
 router.get("/platformlistpublic", async (req, res) => {
     console.log("la requete platformlistpubilc est arrivé coté gateway");
