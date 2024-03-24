@@ -21,12 +21,9 @@ router.get("/platformlistpublic", async (req, res) => {
       
   
       
-     // const response = await axios.get(url, {});
-     // res.status(response.status).send(response.data);
-     res.json({
-        'path':'HOME',
-        'url' : `${process.env.PUBLICDATA_URL}/platformlistpublic`
-    })
+     const response = await axios.get(url, {});
+     res.status(response.status).send(response.data);
+     
 
 
     } catch (error) {
