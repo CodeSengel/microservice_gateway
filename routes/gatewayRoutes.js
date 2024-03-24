@@ -32,8 +32,10 @@ router.get("/platformlistpublic", async (req, res) => {
       );
       res
         .status(500)
-        .send(
-          "Erreur lors de la récupération de la liste des plateformes publiques"
+        .send({"errorm":"Erreur lors de la récupération de la liste des plateformes publiques","error":error
+
+        }
+          
         );
     }
   });
