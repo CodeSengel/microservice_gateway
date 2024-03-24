@@ -21,10 +21,14 @@ router.get("/platformlistpublic", async (req, res) => {
       
   
       
-      const response = await axios.get(url, {});
-   
-  
-      res.status(response.status).send(response.data);
+     // const response = await axios.get(url, {});
+     // res.status(response.status).send(response.data);
+     res.json({
+        'path':'HOME',
+        'url' : `${process.env.PUBLICDATA_URL}/platformlistpublic`
+    })
+
+
     } catch (error) {
       console.error(
         "Erreur lors du traitement de la requête platformlistpubilc côté gateway :",
