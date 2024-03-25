@@ -25,12 +25,12 @@ router.get("/platformlistpublic", async (req, res) => {
 
 // auth service
 
-router.get("/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   console.log("register request arrived on gateway");
   try {
     console.log("before call", url);
     url = `${process.env.AUTHSERVICE_URL}/register`;
-    const response = await axios.default.get(url, req.body);
+    const response = await axios.default.post(url, req.body);
     console.log("after call");
     res.status(response.status).send(response.data);
   } catch (error) {
@@ -42,12 +42,12 @@ router.get("/register", async (req, res) => {
   }
 });
 
-router.get("/login", async (req, res) => {
-  console.log("login request arrived on gateway");
+router.post("/login", async (req, res) => {
+  console.log("login request arrived on gateway ");
   try {
     console.log("before call", url);
     url = `${process.env.AUTHSERVICE_URL}/login`;
-    const response = await axios.default.get(url, req.body);
+    const response = await axios.default.post(url, req.body);
     console.log("after call");
     res.status(response.status).send(response.data);
   } catch (error) {
