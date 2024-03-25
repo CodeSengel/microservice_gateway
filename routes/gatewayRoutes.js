@@ -4,7 +4,11 @@ const axios = require('axios');
 const others = require('axios');
 
 
-
+router.get('/test',(req,res) => {
+    res.json([{
+        'path':'HOME'
+    },{'chek':router}])
+})
 
 router.get("/platformlistpublic", async (req, res) => {
     console.log("la requete platformlistpubilc est arrivé coté gateway");
