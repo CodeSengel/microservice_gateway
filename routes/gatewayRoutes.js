@@ -99,7 +99,12 @@ router.get("/bitpandagetdata", async (req, res) => {
   try {
     console.log("before call", url);
     url = `${process.env.BITPANDA_URL}/getdata`;
-    const response = await axios.default.get(url);
+    const response = await axios.default.get(url, {
+      headers: {
+        authorization: req.headers,
+        "x-api-key": req.headers["x-api-key"],
+      },
+    });
     console.log("after call");
     res.status(response.status).send(response.data);
   } catch (error) {
