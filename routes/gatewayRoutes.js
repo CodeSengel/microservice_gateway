@@ -94,7 +94,7 @@ router.get("/logout", async (req, res) => {
 });
 
 // Bitpanda :
-router.get("/getdata", async (req, res) => {
+router.get("/bitpandagetdata", async (req, res) => {
   console.log("bitpanda getdata request arrived on gateway");
   try {
     console.log("before call", url);
