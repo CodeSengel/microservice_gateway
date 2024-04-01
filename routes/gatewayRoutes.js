@@ -101,7 +101,7 @@ router.get("/bitpandagetdata", async (req, res) => {
     const response = await axios.default.get(url, {
       headers: {
         authorization: req.headers,
-        "x-api-key": req.headers["x-api-key"],
+        "x-api-key": JSON.parse(req.headers["key"])["x-api-key"],
       },
     });
     console.log("after call");
