@@ -93,4 +93,25 @@ router.get("/logout", async (req, res) => {
   }
 });
 
+// Bitpanda :
+router.get("/getdata", async (req, res) => {
+  console.log("bitpanda getdata request arrived on gateway");
+  try {
+    console.log("before call", url);
+    url = `${process.env.BITPANDA_URL}/getdata`;
+    const response = await axios.default.get(url);
+    console.log("after call");
+    res.status(response.status).send(response.data);
+  } catch (error) {
+    console.error(
+      "Error detected on gateway whith 'bitpanda getdata' route ",
+      error
+    );
+    res.status(500).send({
+      errorm: "Error detected on gateway whith 'bitpanda getdata' route",
+      error: error,
+    });
+  }
+});
+
 module.exports = router;
