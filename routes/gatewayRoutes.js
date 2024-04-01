@@ -97,7 +97,6 @@ router.get("/logout", async (req, res) => {
 router.get("/bitpandagetdata", async (req, res) => {
   console.log("bitpanda getdata request arrived on gateway");
   try {
-    console.log("before call", url);
     url = `${process.env.BITPANDA_URL}/getdata`;
     const response = await axios.default.get(url, {
       headers: {
